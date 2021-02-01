@@ -27,5 +27,9 @@ function onSuccess(data) {
     
 }
 function changeColor(){
-    document.body.style.backgroundColor = "green";
+    if (_this.checked) {
+        x.style.backgroundColor = 'green'
+      } else  {
+        x.style.backgroundColor = 'white';
+      }
 }
