@@ -19,7 +19,7 @@
             async function getNames(fValue, lValue) {
                 const response = await fetch(
                     "/reverse/names?first=" + fValue + "&last=" + lValue
-                )
+                );
 
                 if (response.ok) {
                     let json = await response.json()
