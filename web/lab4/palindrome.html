@@ -5,10 +5,17 @@
         <script type="text/javascript"  src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script type="text/javascript"  src="./scripts/onlyscript.js"></script>
         <title>Lab 4</title>
+        <script>
+            $("checkbox").change(function(){
+                if($(this).is(':checked')){
+                    $(this).css("background-color","green");
+                }
+            });
+        </script>
     </head>
 <body>
     <input type = "text" id ="myInput">
-    <button type ="button" id ="myBtn">Show Reversed Val</button>
+    <button type ="button" id ="myBtn">Submit</button>
     <input type ="checkbox" id ="CB" name = "CB" onclick="changeColor()">
     <lablel for = "CB" > Strict?</lablel><br>
    
