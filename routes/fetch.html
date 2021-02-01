@@ -1,0 +1,94 @@
+<!DOCTYPE html> <!-- defines that this document is an HTML5 document -->
+<!-- Comment. It may span multiple lines -->
+
+<html> <!-- the root element of an HTML page -->
+ 
+    <head> <!-- contains meta information about the HTML page -->
+        <title>Hello World</title>
+
+        <script src="/scripts/js/hello.js"></script>
+
+        <script type="text/JavaScript">
+
+            function fetchClick(){ 
+                getContent()
+            }
+
+            async function getContent() {
+                let response = await fetch("/fetch/demo")
+                if (response.ok) { // if HTTP-status is 200-299
+                    // get the response body (the method explained below)
+                    let json = await response.json()
+                    document.getElementById("helloP").innerHTML = json.message
+                    console.log(json)
+                } else {
+                    alert("HTTP-Error: " + response.status)
+                }
+
+
+                // let response = await fetch("/fetch/params?name=Charles")
+                // if (response.ok) { // if HTTP-status is 200-299
+                //     // get the response body (the method explained below)
+                //     let json = await response.json()
+                //     document.getElementById("helloP").innerHTML = json.message
+                //     console.log(json)
+                // } else {
+                //     alert("HTTP-Error: " + response.status)
+                // }
+
+
+                // let response = await fetch("/fetch/params",  {
+                //     method: 'POST',
+                //     headers: {
+                //         'Content-Type': 'application/json;charset=utf-8'
+                //     },
+                //     body: JSON.stringify({'name':'Charles'})
+                // })
+                // if (response.ok) { // if HTTP-status is 200-299
+                //     // get the response body (the method explained below)
+                //     let json = await response.json()
+                //     document.getElementById("helloP").innerHTML = json.message
+                //     console.log(json)
+                // } else {
+                //     alert("HTTP-Error: " + response.status)
+                // }
+
+
+                // let p = document.getElementById("helloP")
+                // if (p === null) {
+                //     alert("This button may only be clicked once!")
+                //     return
+                // }
+                // let response = await fetch("/fetch/names")
+                // if (response.ok) { // if HTTP-status is 200-299
+                //     // get the response body (the method explained below)
+                //     let json = await response.json()
+                //     ul = document.createElement('ul')
+                //     for(const name of json.names) {
+                //         li = document.createElement('li')
+                //         li.innerHTML = `${name.first} ${name.last}`
+                //         ul.appendChild(li)
+                //     }
+                //     div =  document.getElementById("container")
+                //     div.replaceChild(ul, p)
+                //     document.getElementById("butt3").disabled = true
+                // } else {
+                //     alert("HTTP-Error: " + response.status)
+                // }
+            }
+
+        </script>
+        
+    </head>
+
+    <body> <!-- defines the document's body, and is a container for all the visible contents -->
+
+        <div id="container">
+            <p id="helloP" style="color: red;">Change me!</p>
+        </div>
+
+        <button type="button" id="butt3" onclick="fetchClick()">Run Fetch Demo</button>
+        
+    </body>
+
+</html>

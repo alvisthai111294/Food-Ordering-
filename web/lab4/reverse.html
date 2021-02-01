@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+
+<html>
+    <head>
+        <script type="text/javascript"  src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <title>Lab 4</title>
+    </head>
+<body>
+   
+    <input type = "text" id ="myInput">
+    
+    <p id ="results"></p>
+    <button type ="button" id ="myBtn" value ="Revserse" onclick="$"#myInput".val()">Show Reversed Val</button>
+    
+    <script>
+        $(document).ready(function(){
+            $("#myBtn").click(function(){
+                let str = $("#myInput").val();
+                $.ajax({
+                    url: `http://localhost:5000/reverse/word?word=${str}`,
+                    contentType: "application/json",
+                    data: {},
+                    success: onSuccess,
+                    dataType: 'json' 
+                });
+            });
+        });
+
+        function onSuccess(data) {
+            console.log(data);
+            console.log(data.message);
+            $('#myInput').val(data.message);
+           
+            
+        }
+    </script>
+</body>
+    
+</html> 

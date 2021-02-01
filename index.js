@@ -2,7 +2,9 @@
  * Express is the framework we're going to use to handle routing of HTTP Requests.
  * https://expressjs.com/ - a quick check in package.json shows Express 4.x
  */
-const express = require('express')
+const express = require('express');
+const lab4 = require('./routes/lab4');
+const cors = require('cors');
 //Create a new instance of express
 const app = express()
 
@@ -19,7 +21,7 @@ let middleware = require('./middleware')
  */
 app.use(require("body-parser").json())
 
-/*
+/*yyyyyyy
  * This middleware function will respond to improperly formed JSON in found in 
  * an HTTP Request BODY.
  */
@@ -30,6 +32,7 @@ app.use(middleware.jsonError)
  */
 app.use('/node', require('./routes/hello.js'))
 
+app.use('/reverse', cors(), lab4)
 /*
  * When clients connect to the base URL, hosts html and other static files found 
  * in the web directory.
