@@ -2,12 +2,12 @@
 <html>
     <head>
         <title>Restaurant Homepage</title>
-      
-        
+     
+       
             
     </head>
     <style>
-      
+
        .topnav {
         background-color: black;
         overflow: hidden;
@@ -45,15 +45,28 @@
         padding: 0px;
          width: 100px;
         float:left;
+         }
         
-  
- 
-       }
-        
+        .bottom-left{
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+            font-size: 30px;
+            color:black;
+            
+            
+        }
+        .center{
+            
+            text-align: center;
+            font-size:70px;
+            color:black;
+            
+        }
       
     </style>
     <body>
-        
+        <!--Navbar-->
         <div class = "topnav">
             
             <img src="./images/logo.jpg" alt="logo" >
@@ -66,14 +79,19 @@
             <a id ="a1"href = "register.html">Register</a>
             
         </div>
-        <h1 style="font-size: 30px; color:red; background-color: black;">About Us</h1>
-        <p>We are the best local pizza store in Seattle with 100 years of service</p>
-        <h2 style="font-size: 30px; color:red; background-color: black;">Contact Us</h2>
-        <p>Address: 14638 Pacific Hwy S </p>
-        <p>Phone Number: (206)-241-2300</p>
-        <p>Curbsiide Pickup and No contact Delivery</p>
-           
-
+      <!--Header Image-->
+           <div style ="height:800px;background-image:url('./images/front-wallpaper.jpg');background-size: cover; ">
+        <div class = "bottom-left">
+            <span class = "Hour">Open from 9AM to 9PM</span>
+            
+        </div>
+        <div class = "center">
+            <span class = "text-display">HELLO PIZZA</span>
+            
+        </div>
+        
+        </div>
+          
     </body>
 
 
